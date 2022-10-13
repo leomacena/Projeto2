@@ -1,0 +1,148 @@
+body {
+  background-color: black;
+  position: relative;
+  bottom: 50px;
+}
+
+.check-container {
+  display: block;
+  position: start;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.check-container input {
+  position: start;
+  opacity: 0;
+  cursor: pointer;
+  
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 50% ;
+  border: 1px solid rgb(150, 150, 150);
+}
+
+
+.check-container:hover input ~ .checkmark {
+  background-color: #ccc;
+
+}
+
+.check-container input:checked ~ .checkmark {
+  background-color: rgb(0, 185, 0);
+  border: 1px solid rgb(0, 130, 0);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  
+}
+
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.check-container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+label {
+  font-family: sans-serif;
+  color: black;
+  position: relative;
+}
+
+#container2 {
+  position: relative;
+  left: 35%;
+  top: 140px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 60px;
+  width: 400px;
+  flex-direction: column;
+  box-shadow: 0 0 17px rgba(0,0,0,0.2);
+}
+
+#container2 button {
+  position: relative;
+  top: 5px;  
+}
+textarea {
+  background: transparent;
+  outline: none;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  top: 30px;
+  cursor: pointer;
+}
+#criptografar {
+  transform: scale(1.5);
+  right: 100px;
+  
+}
+#decifrar {
+  transform: translate(100px, -32px) scale(1.5);
+}
+#criptografar, #decifrar{
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background: lime;
+  color: darkred;
+  font-family: sanss-serif;
+  font-size: 14px;
+  padding: 8px 10px
+}
+
+#shift {
+  transform: scale(1.5);
+  outline: none;
+  cursor: pointer;
+  border: 1px solid grey;
+
+}
+
+#container1 {
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 60px;
+  width: 400px;
+  box-shadow: 0 0 17px rgba(0,0,0,0.2);
+  position: relative;
+  left: 35%;
+  top: 100px;
+  font-family: cursive;
+  cursor: pointer;
+}
+
+#container1, #container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
