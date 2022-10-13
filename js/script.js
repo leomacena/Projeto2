@@ -15,7 +15,7 @@ function criptografar(){
     let solved = ''
     let shift = parseInt(document.getElementById('shift').value)
 
-    for (var i = 0; i< txtInput.length; i++){
+    for (var i = 0; i < txtInput.length; i++){
         let ascii_num = txtInput[i].charCodeAt()
         let sum = ascii_num + shift
         sum >= 65 && sum <= 90 ? solved += String.fromCharCode(sum) : sum > 90 ? solved += String.fromCharCode(65 + (sum & 91)) : solved += txtInput[i]       
@@ -24,6 +24,16 @@ function criptografar(){
 }
 
 function decifrar(){
+    let txtInput = document.getElementById('txtInput').value;
+    let solved = ''
+    let shift = parseInt(document.getElementById('shift').value)
+
+    for (var i = 0; i < txtInput.length; i++){
+        let ascii_num = txtInput[i].charCodeAt()
+        let sum = ascii_num + (shift *-1)
+        sum >= 65 && sum <= 90 ? solved += String.fromCharCode(sum) : sum > 90 ? solved += String.fromCharCode(65 + (sum & 91)) : solved += txtInput[i]       
+    }
+    outInput.value = solved
 
 }
 
