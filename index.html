@@ -8,48 +8,49 @@
     </head>
 
     <body>
-        <div id="container1">
+      <div id="container1">
           <h1> MENSAGEM OCULTA</h1>
-        </div>
+      </div>
       
-        <div id="container2">
+      <div id="container2">
           
-          <div>
-            <select id="cifra" name="codigo">
-              <option value="australia">Selecione</option>
-              <option value="canada">Base64</option>
-              <option value="usa">Cifra de César</option>
-            </select>
-          </div> 
-          
+       
+        <div id="txtInput">
           <label>
-            <textarea type="text" id="txtInput" placeholder="Insira seu texto aqui"></textarea>
-        </label>
+            <textarea type="text" id="mensagem" placeholder="Insira seu texto aqui"></textarea>
+          </label>
+        </div>
+
+        <div id="tipo">
+          <select name="codigo" id="codigo">
+            <option value disabled selected>Selecione o código</option>
+            <option value = "base64">Base64</option>
+            <option value= "cesar">Cifra de César</option>
+          </select>
+        </div> 
           
+        <div id="shiftId">
           <input type="number" id="shift" min="0" max="25" placeholder="Nº">
-   
+        </div>  
 
-         <div class="check">
-           
-            <label class="check-container">Codificar
-            <input type="radio" checked="checked" name="radio">
-            <span class="checkmark"></span>
-          </label>
+        <div class="check" id="check">
+          
+          <input type="radio" name="radio" class="checkmark" id="codificar" value="Codificar">           
+            <label class="check-container">Codificar</label>
 
-          <label class="check-container">Decodificar
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
+          <input type="radio" name="radio" class="checkmark" id="decodificar" value="Decodificar">  
+            <label class="check-container">Decodificar</label>
 
-         </div>   
-
+        </div>   
+        
           <label>
             <textarea type="text" id="outInput" placeholder="Sua mensagem aparece aqui"></textarea>              
           </label>
-      
-          <button id="codificar">Codificar</button>
-          <button id="decodificar">Decodificar</button>
-      
+                
+          <button id="codeBtn">Codificar</button>
+          <button id="decodeBtn">Decodificar</button>
+        
+
       </div>  
 
       <script src="js/script.js"></script>
