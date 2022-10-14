@@ -4,6 +4,14 @@ body {
   bottom: 50px;
 }
 
+.check {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 8px;
+margin-top: 20px; 
+}
+
 .check-container {
   display: block;
   position: start;
@@ -100,15 +108,15 @@ textarea {
   top: 30px;
   cursor: pointer;
 }
-#criptografar {
+#codificar {
   transform: scale(1.5);
   right: 100px;
   
 }
-#decifrar {
+#decodificar {
   transform: translate(100px, -32px) scale(1.5);
 }
-#criptografar, #decifrar{
+#codificar, #decodificar{
   border-radius: 3px;
   border: none;
   cursor: pointer;
@@ -136,7 +144,7 @@ textarea {
   box-shadow: 0 0 17px rgba(0,0,0,0.2);
   position: relative;
   left: 35%;
-  top: 100px;
+  top: 130px;
   font-family: cursive;
   cursor: pointer;
 }

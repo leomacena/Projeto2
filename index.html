@@ -14,27 +14,41 @@
       
         <div id="container2">
           
-          <label class="check-container">Base64
-  <input type="radio" checked="checked" name="radio">
-  <span class="checkmark"></span>
-</label>
-<label class="check-container">Cifra de césar
-  <input type="radio" name="radio">
-  <span class="checkmark"></span>
-</label>          
+          <div>
+            <select id="cifra" name="codigo">
+              <option value="australia">Selecione</option>
+              <option value="canada">Base64</option>
+              <option value="usa">Cifra de César</option>
+            </select>
+          </div> 
           
           <label>
             <textarea type="text" id="txtInput" placeholder="Insira seu texto aqui"></textarea>
         </label>
           
-          <input type="number" id="shift" min="0" max="25">
-                   
+          <input type="number" id="shift" min="0" max="25" placeholder="Nº">
+   
+
+         <div class="check">
+           
+            <label class="check-container">Codificar
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="check-container">Decodificar
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+
+         </div>   
+
           <label>
             <textarea type="text" id="outInput" placeholder="Sua mensagem aparece aqui"></textarea>              
           </label>
       
-          <button id="criptografar">Criptografar</button>
-          <button id="decifrar">Decifrar</button>
+          <button id="codificar">Codificar</button>
+          <button id="decodificar">Decodificar</button>
       
       </div>  
 

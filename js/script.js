@@ -1,8 +1,8 @@
-let criptoBtn = document.getElementById("criptografar");
+let codeBtn = document.getElementById("codificar");
 let outInput = document.getElementById("outInput");
 let txtInput = document.getElementById("txtInput");
 let inputs = [outInput,txtInput];
-let decifrarBtn = document.getElementById("decifrar");
+let decodeBtn = document.getElementById("Decodificar");
 
 inputs.forEach ( input => {
     input.oninput = () => {
@@ -10,7 +10,7 @@ inputs.forEach ( input => {
     }
 })
 
-function criptografar(){
+function codificar(){
     let txtInput = document.getElementById('txtInput').value;
     let solved = ''
     let shift = parseInt(document.getElementById('shift').value)
@@ -23,7 +23,7 @@ function criptografar(){
     outInput.value = solved
 }
 
-function decifrar(){
+function decode(){
     let txtInput = document.getElementById('txtInput').value;
     let solved = ''
     let shift = parseInt(document.getElementById('shift').value)
@@ -37,5 +37,5 @@ function decifrar(){
 
 }
 
-criptoBtn.addEventListener('click', criptografar); 
-decifrarBtn.addEventListener('click', decifrar); 
+codeBtn.addEventListener('click', codificar); 
+decodeBtn.addEventListener('click', decode); 
