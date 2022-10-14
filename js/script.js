@@ -42,6 +42,14 @@ decode.addEventListener('click', function(){
 
 function codificar(){
    
+    if (tipo == "cesar") {
+        alert("cesar")
+    } else if (select == "base64"){
+        alert("base64");
+    }
+
+
+    /*
     var mensagem = document.getElementById('mensagem').value;
     var solved = ''
     var shift = parseInt(document.getElementById('shift').value)
@@ -51,7 +59,7 @@ function codificar(){
         var soma = ascii_num + shift
         soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma > 90 ? solved += String.fromCharCode(65 + (soma & 91)) : solved += mensagem[i];       
     }
-    outInput.value = solved
+    outInput.value = solved*/
 }
     
 
