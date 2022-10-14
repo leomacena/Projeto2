@@ -48,27 +48,29 @@ function codificar(){
 
     for (var i = 0; i < mensagem.length; i++){
         var ascii_num = mensagem[i].charCodeAt()
-        var sum = ascii_num + shift
-        sum >= 65 && sum <= 90 ? solved += String.fromCharCode(sum) : sum > 90 ? solved += String.fromCharCode(65 + (sum & 91)) : solved += txtInput[i]       
+        var soma = ascii_num + shift
+        soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma > 90 ? solved += String.fromCharCode(65 + (soma & 91)) : solved += mensagem[i];       
     }
     outInput.value = solved
 }
     
 
 
-/*
-function decode(){
-    let txtInput = document.getElementById('txtInput').value;
-    let solved = ''
-    let shift = parseInt(document.getElementById('shift').value)
+function decodificar(){
+    
+    var mensagem = document.getElementById('mensagem').value;
+    var solved = ''
+    var shift = parseInt(document.getElementById('shift').value)
 
-    for (var i = 0; i < txtInput.length; i++){
-        let ascii_num = txtInput[i].charCodeAt()
-        let sum = ascii_num + (shift *-1)
-        sum >= 65 && sum <= 90 ? solved += String.fromCharCode(sum) : sum > 90 ? solved += String.fromCharCode(65 + (sum & 91)) : solved += txtInput[i]       
+    for (var i = 0; i < mensagem.length; i++){
+        var ascii_num = mensagem[i].charCodeAt()
+        var soma = ascii_num + (shift*-1)
+        soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma > 90 ? solved += String.fromCharCode(65 + (soma & 91)) : solved += mensagem[i];       
     }
     outInput.value = solved
-*/
+
+}
 
 
-codeBtn.addEventListener('click', codificar); 
+codeBtn.addEventListener('click', codificar);
+decodeBtn.addEventListener('click', decodificar);  
