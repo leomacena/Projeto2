@@ -1,13 +1,13 @@
-var mensagem = document.getElementById("mensagem");
-var shiftId = document.getElementById("shiftId");
-var check = document.getElementById("check");
-var tipo = document.getElementById("tipo");
-var outInput = document.getElementById("outInput");
+let mensagem = document.getElementById("mensagem");
+let shiftId = document.getElementById("shiftId");
+let check = document.getElementById("check");
+let tipo = document.getElementById("tipo");
+let outInput = document.getElementById("outInput");
 let inputs = [outInput,mensagem];
-var code = document.getElementById("codificar");
-var decode = document.getElementById("decodificar");
-var codeBtn = document.getElementById("codeBtn");
-var decodeBtn = document.getElementById("decodeBtn");
+let code = document.getElementById("codificar");
+let decode = document.getElementById("decodificar");
+let codeBtn = document.getElementById("codeBtn");
+let decodeBtn = document.getElementById("decodeBtn");
 
 inputs.forEach ( input => {
     input.oninput = () => {
@@ -15,8 +15,8 @@ inputs.forEach ( input => {
     }
 })
 
-var select = addEventListener('click', function(){
-    var codigo = document.getElementById("codigo").value
+let select = addEventListener('click', function(){
+    let codigo = document.getElementById("codigo").value
     if (codigo == "cesar"){
         shiftId.style.display = 'flex';
         check.style.display = 'flex';
@@ -38,47 +38,52 @@ decode.addEventListener('click', function(){
     decodeBtn.style.display = 'block'
 })
 
-
-
 function codificar(){
    
-    if (tipo == "cesar") {
-        alert("cesar")
-    } else if (select == "base64"){
-        alert("base64");
-    }
-
-
-    /*
-    var mensagem = document.getElementById('mensagem').value;
-    var solved = ''
-    var shift = parseInt(document.getElementById('shift').value)
-
-    for (var i = 0; i < mensagem.length; i++){
-        var ascii_num = mensagem[i].charCodeAt()
-        var soma = ascii_num + shift
-        soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma > 90 ? solved += String.fromCharCode(65 + (soma & 91)) : solved += mensagem[i];       
-    }
-    outInput.value = solved*/
-}
+    if (document.getElementById("codigo").value == "cesar") {
+        
+        let mensagem = document.getElementById('mensagem').value;
+        let solved = ''
+        let shift = parseInt(document.getElementById('shift').value)
     
+        for (let i = 0; i < mensagem.length; i++){
+            let ascii_num = mensagem[i].charCodeAt()
+            let soma = ascii_num + shift
+            soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma > 90 ? solved += String.fromCharCode(65 + (soma % 91)) : solved += mensagem[i];       
+        }
+        outInput.value = solved
 
+    } else if (document.getElementById("codigo").value == "base64"){
+        let mensagem = document.getElementById('mensagem').value;
+        let encoded = window.btoa(mensagem);
+        outInput.value = encoded;    
+    }
+}
+ 
 
+//CORRIGIR
 function decodificar(){
+   
+    if (document.getElementById("codigo").value == "cesar") {
+        
+        let mensagem = document.getElementById('mensagem').value;
+        let solved = ''
+        let shift = parseInt(document.getElementById('shift').value)
     
-    var mensagem = document.getElementById('mensagem').value;
-    var solved = ''
-    var shift = parseInt(document.getElementById('shift').value)
+        for (let i = 0; i < mensagem.length; i++){
+            let ascii_num = mensagem[i].charCodeAt()
+            let soma = ascii_num - shift
+            soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma < 65 ? solved += String.fromCharCode(65 - (soma % 64)) : solved += mensagem[i];       
+        }
+        outInput.value = solved
 
-    for (var i = 0; i < mensagem.length; i++){
-        var ascii_num = mensagem[i].charCodeAt()
-        var soma = ascii_num + (shift*-1)
-        soma >= 65 && soma <= 90 ? solved += String.fromCharCode(soma) : soma > 90 ? solved += String.fromCharCode(65 + (soma & 91)) : solved += mensagem[i];       
+    } else if (document.getElementById("codigo").value == "base64"){
+        
+        let mensagem = document.getElementById('mensagem').value;
+        let encoded = window.atob(mensagem);
+        outInput.value = encoded;
     }
-    outInput.value = solved
-
 }
-
 
 codeBtn.addEventListener('click', codificar);
 decodeBtn.addEventListener('click', decodificar);  
